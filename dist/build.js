@@ -1,1 +1,0 @@
-console.error("\n/Users/josefina/Documents/Universidad/9. Noveno Semestre/Diseño Avanzado de Apps Web/vue-grupo-5/src/main.js:1\nimport Vue from 'vue';\n^\nParseError: 'import' and 'export' may appear only with 'sourceType: module'");
