@@ -1,4 +1,5 @@
 import shop from "@/api/shop";
+import dogBreeds from "@/api/dogs";
 
 export default {
     namespaced: true,
@@ -33,6 +34,9 @@ export default {
                     resolve()
                 })
             })
+        },
+        fetchDogBreeds({commit}) {
+            dogBreeds.getDogs()
         }
     }
 }
