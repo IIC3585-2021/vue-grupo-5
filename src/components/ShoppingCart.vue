@@ -13,12 +13,8 @@
 </template>
 
 <script>
-import DogCard from './DogCard'
 import {mapState, mapGetters, mapActions} from 'vuex'
 export default {
-    components: {
-        DogCard
-    },
     computed: {
         ...mapGetters('cart', {
             products: 'cartProducts',

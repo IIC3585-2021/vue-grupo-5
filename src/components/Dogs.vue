@@ -1,12 +1,13 @@
 <template>
   <div> 
       <h1>Dogs List</h1>
-      <div v-bind:style="{display: 'flex'}">
-        <dog-card v-for="dog in allDogs" 
+      <div v-bind:style="{display: 'flex', overflow: 'scroll', height: 'auto', width: 'auto'}">
+        <dog-card v-for="dog in dogs" 
         :key="dog.id"
         :dog="dog"
         />
       </div>
+
   </div>
 </template>
 
@@ -15,14 +16,6 @@ import {mapState, mapGetters, mapActions} from 'vuex'
 import DogCard from './DogCard'
 
 export default {
-    data() {
-        return {
-            allDogs: [{"bred_for": "Small rodent hunting", "breed_group": "Toy"},
-            {"bred_for": "Bulldog", "breed_group": "Toy"},
-            {"bred_for": "Doberman", "breed_group": "Giant"},
-            {"bred_for": "Husky", "breed_group": "Toy"}]
-        }
-    },
     components: {
         DogCard
     },

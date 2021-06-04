@@ -16,8 +16,8 @@ export default {
     actions: {
         fetchDogBreeds({commit}) {
             return new Promise ((resolve, reject) => {
-                console.log("estos son")
                 dogBreeds.getDogs(dogs => {
+                    console.log("estos son", dogs)
                     commit('setDogs', dogs)
                     resolve()
                 })

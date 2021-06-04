@@ -1,12 +1,15 @@
 <template>
   <div> 
       <h1>Favourite Dogs</h1>
-      <div v-bind:style="{display: 'flex'}">
+      <div v-if="favoriteDogs.length > 0"
+        v-bind:style="{display: 'flex'}">
         <dog-card v-for="dog in favoriteDogs" 
         :key="dog.id"
         :dog="dog.dog"
+        v-bind:style="{backgroundColor: 'lightpink'}"
         />
       </div>
+      <p v-else>No tienes perros seleccionados</p>
   </div>
 </template>
 
