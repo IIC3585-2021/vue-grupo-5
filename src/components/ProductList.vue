@@ -33,14 +33,12 @@ export default {
         ...mapActions({
             fetchProducts: 'products/fetchProducts',
             addProductToCart: 'cart/addProductToCart',
-            fetchDogBreeds: 'products/fetchDogBreeds'
         }),
     },
     created(){
         this.loading = true
         this.fetchProducts()
             .then(() => this.loading = false)
-        this.fetchDogBreeds()
     }
 }
 </script>

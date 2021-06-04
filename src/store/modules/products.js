@@ -5,6 +5,7 @@ export default {
     namespaced: true,
     state: {
         items: [],
+        dogsList: []
     },
     getters: {
         availableProducts(state, getters) {
@@ -22,6 +23,10 @@ export default {
             state.items = products
 
         },
+        setDogs(state, dogs) {
+            state.dogsList = dogs
+
+        },
         decrementProductInventory (state, product) {
             product.inventory--
         },
@@ -35,8 +40,5 @@ export default {
                 })
             })
         },
-        fetchDogBreeds({commit}) {
-            dogBreeds.getDogs()
-        }
     }
 }
