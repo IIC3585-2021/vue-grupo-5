@@ -32,7 +32,7 @@ export default {
     methods: {
         ...mapActions({
             fetchProducts: 'products/fetchProducts',
-            addProductToCart: 'cart/addProductToCart'
+            addProductToCart: 'cart/addProductToCart',
         }),
     },
     created(){
