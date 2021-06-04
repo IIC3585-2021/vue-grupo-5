@@ -5,6 +5,8 @@
     <ShoppingCart />
     <hr>
     <Dogs />
+    <hr>
+    <FavoriteDogs />
   </div>
 </template>
 
@@ -12,13 +14,15 @@
 import ProductList from './components/ProductList'
 import ShoppingCart from './components/ShoppingCart'
 import Dogs from './components/Dogs'
+import FavoriteDogs from './components/FavoriteDogs'
 
 export default {
   name: 'app',
   components:{
     ProductList,
     ShoppingCart,
-    Dogs
+    Dogs,
+    FavoriteDogs
   }
 }
 </script>

@@ -4,11 +4,11 @@
         <h1>Raza</h1>
         <img>
         <!-- info -->
-        <div>
+        <div v-bind:style="{display: 'flex', flexDirection: 'column', height: '160px'}">
             <h3>{{dog.bred_for}}</h3>
             <h3>{{dog.breed_group}}</h3>
         </div>
-        <button @click="addDogToFavorites(dog)">Seleccionar</button>
+        <button @click="addDogToFavorites(dog)">Agregar</button>
   </div>
 </template>
 
@@ -19,8 +19,8 @@ export default {
         dog: {type: Object, required: true},
     },
     methods: {
-        ...mapActions({
-            addDogToFavorites: 'dogs/addDogToFavorites'
+        ...mapActions('favorites', {
+            addDogToFavorites: 'addDogToFavorites'
         }),
     },
 }
