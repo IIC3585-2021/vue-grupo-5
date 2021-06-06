@@ -6,10 +6,15 @@
     { 'id': 2, 'title': 'H&M T-Shirt White', 'price': 10.99, 'inventory': 10 },
     { 'id': 3, 'title': 'Charli XCX - Sucker CD', 'price': 19.99, 'inventory': 5 }
   ]
+const _filters = ["Toy", "Working", "Terrier", "Herding","Non-Sporting"]
+
   
   export default {
     getProducts (cb) {
       setTimeout(() => cb(_products), 100)
+    },
+    getFilters (cb) {
+      setTimeout(() => cb(_filters), 100)
     },
   
     buyProducts (products, cb, errorCb) {

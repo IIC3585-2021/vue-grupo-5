@@ -6,6 +6,8 @@ import cart from './modules/cart'
 import products from './modules/products'
 import dogs from './modules/dogs'
 import favorites from './modules/favorites'
+import applied from './modules/applied'
+import filters from './modules/filters'
 
 Vue.use(Vuex)
 
@@ -14,7 +16,9 @@ export default new Vuex.Store({
         cart,
         products,
         dogs,
-        favorites
+        favorites,
+        filters,
+        applied
     },
     state: {  
     },

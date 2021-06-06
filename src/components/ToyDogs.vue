@@ -1,15 +1,15 @@
 <template>
   <div> 
-      <h1>Favorite Dogs</h1>
-      <div v-if="favoriteDogs.length > 0"
+      <h1>Toy Dogs</h1>
+      <div v-if="toyDogs.length > 0"
         v-bind:style="{display: 'flex'}">
-        <dog-card v-for="dog in favoriteDogs" 
+        <dog-card v-for="dog in toyDogs" 
         :key="dog.id"
-        :dog="dog.dog"
-        v-bind:style="{backgroundColor: 'lightpink'}"
+        :dog="dog"
+        v-bind:style="{backgroundColor: 'lightgreen'}"
         />
       </div>
-      <p v-else>No tienes perros seleccionados</p>
+      <p v-else>No hay perros Toy</p>
   </div>
 </template>
 
@@ -22,7 +22,7 @@ export default {
     },
     computed: {
         ...mapGetters({
-            favoriteDogs: 'favorites/favoriteDogs'
+            toyDogs: 'dogs/toyDogs'
         }),
     },
     methods: {

@@ -4,7 +4,13 @@
     <hr>
     <ShoppingCart />
     <hr>
+    <Filters />
+    <hr>
+    <Applied />
+    <hr>
     <Dogs />
+    <hr>
+    <FilteredDogs />
     <hr>
     <FavoriteDogs />
   </div>
@@ -13,8 +19,11 @@
 <script>
 import ProductList from './components/ProductList'
 import ShoppingCart from './components/ShoppingCart'
+import Filters from './components/Filters'
+import Applied from './components/Applied'
 import Dogs from './components/Dogs'
 import FavoriteDogs from './components/FavoriteDogs'
+import FilteredDogs from './components/FilteredDogs'
 
 export default {
   name: 'app',
@@ -22,8 +31,11 @@ export default {
     ProductList,
     ShoppingCart,
     Dogs,
-    FavoriteDogs
-  }
+    FavoriteDogs,
+    Filters,
+    Applied,
+    FilteredDogs
+    }
 }
 </script>
 

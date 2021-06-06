@@ -6,6 +6,11 @@ export default {
         dogsList: []
     },
     getters: {
+        toyDogs(state) {
+            const toys = state.dogsList.filter(dog => dog.breed_group == "Toy")
+            console.log("toys", toys)
+            return toys
+        }
     },
     mutations: {
         setDogs(state, dogs) {
