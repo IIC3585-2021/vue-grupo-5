@@ -5,6 +5,7 @@
         <dog-card v-for="dog in dogs" 
         :key="dog.id"
         :dog="dog"
+        :favorite="false"
         />
       </div>
 

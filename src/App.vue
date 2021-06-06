@@ -1,14 +1,11 @@
 <template>
   <div id="app">
-    <ProductList/>
-    <hr>
-    <ShoppingCart />
+    <h1> DOG ENCYCLOPEDIA </h1>
+    <Dogs />
     <hr>
     <Filters />
     <hr>
     <Applied />
-    <hr>
-    <Dogs />
     <hr>
     <FilteredDogs />
     <hr>

@@ -4,6 +4,8 @@
       <ul>
           <li v-for="filter in applied" :key="filter">
               {{filter}}
+            <button @click="deleteFilter(filter)">Delete</button>
+
           </li>
       </ul>
       <button @click="clearFilters">Clear all</button>
@@ -20,7 +22,7 @@ export default {
         
     },
     methods: {
-        ...mapActions('applied', ['clearFilters'])
+        ...mapActions('applied', ['clearFilters', 'deleteFilter'])
 
     }
 }

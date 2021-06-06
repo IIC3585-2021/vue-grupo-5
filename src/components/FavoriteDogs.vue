@@ -5,16 +5,19 @@
         v-bind:style="{display: 'flex'}">
         <dog-card v-for="dog in favoriteDogs" 
         :key="dog.id"
-        :dog="dog.dog"
+        :dog="dog.dog" 
+        :favorite="true"
         v-bind:style="{backgroundColor: 'lightpink'}"
         />
+
+        
       </div>
-      <p v-else>No tienes perros seleccionados</p>
+      <p v-else>There are still no favorite dogs</p>
   </div>
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
+import {mapGetters, mapActions} from 'vuex'
 import DogCard from './DogCard'
 export default {
     components: {
@@ -26,7 +29,10 @@ export default {
         }),
     },
     methods: {
-    }
+        ...mapActions('favorites', {
+            removeDogFromFavorites: 'removeDogFromFavorites'
+        }),
+    },
 }
 </script>
 <style scoped>

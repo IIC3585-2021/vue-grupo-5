@@ -6,10 +6,11 @@
         <dog-card v-for="dog in filteredDogs" 
         :key="dog.id"
         :dog="dog"
+        :favorite="false"
         v-bind:style="{backgroundColor: 'lightgreen'}"
         />
       </div>
-      <p v-else>No hay perros para las características seleccionadas</p>
+      <p v-else>There are no dogs matching the selection</p>
   </div>
 </template>
 

@@ -6,6 +6,7 @@
         <dog-card v-for="dog in toyDogs" 
         :key="dog.id"
         :dog="dog"
+        :favorite="false"
         v-bind:style="{backgroundColor: 'lightgreen'}"
         />
       </div>

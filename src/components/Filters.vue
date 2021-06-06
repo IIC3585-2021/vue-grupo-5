@@ -1,6 +1,6 @@
 <template>
   <div> 
-      <h1>Filtros</h1>
+      <h1>Breed Group filters</h1>
       <img v-if="loading" src="https://i.imgur.com/JfPpwOA.gif">
       <ul v-else>
           <li v-for="filter in filters" :key="filter">
