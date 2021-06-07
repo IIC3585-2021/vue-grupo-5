@@ -14,8 +14,6 @@
 </template>
 
 <script>
-import ProductList from './components/ProductList'
-import ShoppingCart from './components/ShoppingCart'
 import Filters from './components/Filters'
 import Applied from './components/Applied'
 import Dogs from './components/Dogs'
@@ -25,8 +23,6 @@ import FilteredDogs from './components/FilteredDogs'
 export default {
   name: 'app',
   components:{
-    ProductList,
-    ShoppingCart,
     Dogs,
     FavoriteDogs,
     Filters,
