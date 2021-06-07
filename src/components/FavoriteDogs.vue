@@ -2,7 +2,7 @@
   <div> 
       <h1>Favorite Dogs</h1>
       <div v-if="favoriteDogs.length > 0"
-        v-bind:style="{display: 'flex'}">
+        v-bind:style="{display: 'flex', overflow: 'scroll'}">
         <dog-card v-for="dog in favoriteDogs" 
         :key="dog.id"
         :dog="dog.dog" 

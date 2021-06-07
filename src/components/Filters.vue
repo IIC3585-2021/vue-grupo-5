@@ -2,7 +2,8 @@
   <div> 
       <h1>Breed Group filters</h1>
       <img v-if="loading" src="https://i.imgur.com/JfPpwOA.gif">
-      <ul v-else>
+      <ul v-bind:style="{listStyleType: 'none'}"
+      v-else>
           <li v-for="filter in filters" :key="filter">
             {{filter}} 
             <button 
