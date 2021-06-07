@@ -6,6 +6,8 @@
         :key="dog.id"
         :dog="dog"
         :favorite="false"
+        :filtered="false"
+
         />
       </div>
 

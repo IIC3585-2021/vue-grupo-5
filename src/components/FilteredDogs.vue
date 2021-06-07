@@ -7,6 +7,8 @@
         :key="dog.id"
         :dog="dog"
         :favorite="false"
+        :filtered="true"
+
         v-bind:style="{backgroundColor: 'lightgreen'}"
         />
       </div>
