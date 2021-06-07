@@ -6,7 +6,9 @@ export default {
     getters: {
         favoriteDogs (state) {
             return state.favoriteDogsList
-        },   
+        }          
+    
+
     },
     mutations: {
         pushDogToFavorites (state, dog) {

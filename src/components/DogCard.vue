@@ -14,17 +14,25 @@
         </div>
         <button v-if="favorite == true" :id="'seeMore-button' + dog.id" @click="moreInfo(dog)">See More</button>
         <button v-if="favorite == true" @click="removeFromFavorites(dog)">Delete from Favorites</button>
+        
+        <button v-if="filtered == true" :id="'add-button-filtered' + dog.id" onClick="this.disabled=true" @click="addToFavorites(dog)">Add to Favorites</button>
 
-        <button v-else :id="'add-button' + dog.id" onClick="this.disabled=true" @click="addDogToFavorites(dog)">Add to Favorites</button>
+        <button v-if="favorite == false && filtered == false" :id="'add-button' + dog.id" onClick="this.disabled=true" @click="addToFavorites(dog)">Add to Favorites</button>
   </div>
 </template>
 
 <script>
-import {mapActions} from 'vuex'
+import {mapActions, mapGetters} from 'vuex'
 export default {
     props: {
         dog: {type: Object, required: true},
-        favorite: {type: Boolean, required: true}
+        favorite: {type: Boolean, required: true},
+        filtered: {type: Boolean, required: true}
+    },
+    computed: {
+        ...mapGetters({
+            isInFilter: 'applied/isInFilter',
+        }),
     },
     methods: {
         ...mapActions('favorites', {
@@ -45,7 +53,17 @@ export default {
                 document.getElementById(id).innerHTML= 'See More';
             }
         },
+        addToFavorites: function(dog){
+            if(this.isInFilter(dog)){
+                    document.getElementById("add-button-filtered" + dog.id).disabled = true;
+                }
+                document.getElementById("add-button" + dog.id).disabled = true;
+                this.addDogToFavorites(dog);
+        },
         removeFromFavorites: function(dog){
+                if(this.isInFilter(dog)){
+                    document.getElementById("add-button-filtered" + dog.id).disabled = false;
+                }
                 document.getElementById("add-button" + dog.id).disabled = false;
                 this.removeDogFromFavorites(dog);
 

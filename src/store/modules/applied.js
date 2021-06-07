@@ -13,6 +13,11 @@ export default {
             console.log(filtrados)
             return filtrados
             
+        },
+        isInFilter (state, getters, rootState, rootGetters){
+                return (dog) => {
+                    return state.applied.includes(dog.breed_group)
+                }            
         }
     },
     mutations: {

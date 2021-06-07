@@ -7,6 +7,7 @@
         :key="dog.id"
         :dog="dog.dog" 
         :favorite="true"
+        :filtered="false"
         v-bind:style="{backgroundColor: 'lightpink'}"
         />
 
