@@ -1,7 +1,7 @@
 <template>
   <div> 
       <h1>Applied Filters</h1>
-      <ul>
+      <ul v-bind:style="{listStyleType: 'none'}">
           <li v-for="filter in applied" :key="filter">
               {{filter}}
             <button @click="deleteFilter(filter)">Delete</button>
