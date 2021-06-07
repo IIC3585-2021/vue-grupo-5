@@ -1,18 +1,38 @@
 <template>
   <div id="app">
-    <ProductList/>
-    
-
+    <h1> DOG ENCYCLOPEDIA </h1>
+    <Dogs />
+    <hr>
+    <Filters />
+    <hr>
+    <Applied />
+    <hr>
+    <FilteredDogs />
+    <hr>
+    <FavoriteDogs />
   </div>
 </template>
 
 <script>
 import ProductList from './components/ProductList'
+import ShoppingCart from './components/ShoppingCart'
+import Filters from './components/Filters'
+import Applied from './components/Applied'
+import Dogs from './components/Dogs'
+import FavoriteDogs from './components/FavoriteDogs'
+import FilteredDogs from './components/FilteredDogs'
+
 export default {
   name: 'app',
   components:{
-    ProductList
-  }
+    ProductList,
+    ShoppingCart,
+    Dogs,
+    FavoriteDogs,
+    Filters,
+    Applied,
+    FilteredDogs
+    }
 }
 </script>
 

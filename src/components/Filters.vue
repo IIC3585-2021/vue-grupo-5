@@ -1,13 +1,12 @@
 <template>
   <div> 
-      <h1>Product List</h1>
+      <h1>Breed Group filters</h1>
       <img v-if="loading" src="https://i.imgur.com/JfPpwOA.gif">
       <ul v-else>
-          <li v-for="product in products" :key="product.id">
-            {{product.title}} - {{ product.price | currency }} - {{ product.inventory }}
+          <li v-for="filter in filters" :key="filter">
+            {{filter}} 
             <button 
-            :disabled="!productIsInStock(product)"
-            @click="addProductToCart(product)">Add to cart</button>
+            @click="addFilter(filter)">Add filter</button>
           </li>
       </ul>
   </div>
@@ -23,21 +22,21 @@ export default {
     },
     computed: {
         ...mapState({
-        products: state => state.products.items,
+        filters: state => state.filters.allFilters,
         }),
-        ...mapGetters('products', {
-            productIsInStock: 'productIsInStock'
+        ...mapGetters({
+            allFilters: 'availableFilters'
         }),
     },
     methods: {
         ...mapActions({
-            fetchProducts: 'products/fetchProducts',
-            addProductToCart: 'cart/addProductToCart',
+            fetchFilters: 'filters/fetchFilters',
+            addFilter: 'applied/addFilter'
         }),
     },
     created(){
         this.loading = true
-        this.fetchProducts()
+        this.fetchFilters()
             .then(() => this.loading = false)
     }
 }
